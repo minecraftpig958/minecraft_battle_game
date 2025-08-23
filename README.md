@@ -24,10 +24,23 @@ python3 main.py
 
 - Real-time Battle Log: Watch as each turn of the battle unfolds in the console.
 
+🔍 Troubleshooting
+
+If one of the two mobs die as soon as the battle starts, it might be that 
+
+- you chose to select your own mob, and entered one that is not in the game code
+
+- you created a mob and set the health to 0, meaning it dies immediately
+
+
+If you get an error message, it is most likely that you entered something wrong, for example, a string when it asks you for mob health.
+
 📝 Planned Improvements
 
 - Adding more mobs and items.
 
 - Improving the special attack logic for a wider variety of battle scenarios.
 
-- Refactoring the code to make it easier to add new features.
+- Refactoring the code to remove repetitive code and separate mob data from fighting logic.
+
+- Displaying a warning when an unsupported mob is selected.
