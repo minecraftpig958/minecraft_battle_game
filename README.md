@@ -2,7 +2,8 @@
 
 A Python command-line game where you can simulate a battle between two different Minecraft mobs!
 
-⚔️ How to Play
+
+⚔️ **How to Play**
 
 - Clone the Repository: Download or clone this repository to your local machine.
 
@@ -14,7 +15,8 @@ python3 main.py
 
 - Choose Your Mobs: Follow the on-screen prompts to either have a random battle or choose your own mobs to fight. You can even create custom mobs with your own stats and special attacks!
 
-✨ Features
+
+✨ **Features**
 
 - Randomized Battles: Let the program choose two random mobs and items for a surprise fight.
 
@@ -24,7 +26,8 @@ python3 main.py
 
 - Real-time Battle Log: Watch as each turn of the battle unfolds in the console.
 
-🔍 Troubleshooting
+
+🔍 **Troubleshooting**
 
 If one of the two mobs die as soon as the battle starts, it might be that 
 
@@ -35,7 +38,8 @@ If one of the two mobs die as soon as the battle starts, it might be that
 
 If you get an error message, it is most likely that you entered something wrong, for example, a string when it asks you for mob health.
 
-📝 Planned Improvements
+
+📝 **Planned Improvements**
 
 - Adding more mobs and items.
 
