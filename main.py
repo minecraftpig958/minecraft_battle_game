@@ -29,7 +29,9 @@ firstsmart = "N"
 secondsmart = "N"
 firstphase = 0
 secondphase = 0
-fightmode = 1
+fightmode = 0
+firstverify = True
+secondverify = True
 
 print("Welcome to the minecraft mob battle game!")
 time.sleep(1)
@@ -70,13 +72,25 @@ firstitem = itemslist[random.randrange(0, len(itemslist))]
 seconditem = itemslist[random.randrange(0, len(itemslist))]
 
 if not firstpick == "n":
+  firstverify = firstpick in mobslist
   firstmob = firstpick
 if not secondpick == "n":
+  secondverify = secondpick in mobslist
   secondmob = secondpick
 if not firstitempick == "random":
   firstitem = firstitempick
 if not seconditempick == "random":
   seconditem = seconditempick
+time.sleep(0.2)
+if firstverify == False and secondverify == True:
+  print("\nwarning: the first mob you picked is not in the code. unless it is a secret mob, it will die as soon as the battle starts.\n")
+  time.sleep(3)
+if firstverify == False and secondverify == False:
+  print("\nwarning: the mobs you picked is not in the code. unless they are secret mobs, they will die as soon as the battle starts.\n")
+  time.sleep(3)
+if firstverify == True and secondverify == False:
+  print("\nwarning: the second mob you picked is not in the code. unless it is a secret mob, it will die as soon as the battle starts.\n")
+  time.sleep(3)
 print("\nthis battle:", firstmob, "holding", firstitem, "against", secondmob, "holding", seconditem, "\n")
 
 if fightmode == 1:
@@ -103,10 +117,12 @@ match firstmob:
     firsthp = 6
   case "enderman" | "iron golem" | "illusioner":
     firsthp = 35
-  case "shulker" | "blaze" | "breeze":
+  case "shulker" | "blaze" | "breeze" | "pillager":
     firsthp = 18
   case "creaking" | "wither storm":
     firsthp = 99999
+  case "redstone monstrosity":
+    firsthp = 12000
   case firstpick:
     firsthp = firstmobhealth
 match secondmob:
@@ -128,10 +144,12 @@ match secondmob:
     secondhp = 6
   case "enderman" | "iron golem" | "illusioner":
     secondhp = 35
-  case "shulker" | "blaze" | "breeze":
+  case "shulker" | "blaze" | "breeze" | "pillager":
     secondhp = 18
   case "creaking" | "wither storm":
     secondhp = 99999
+  case "redstone monstrosity":
+    secondhp = 12000
   case secondpick:
     secondhp = secondmobhealth
 
@@ -638,6 +656,28 @@ while True:
         firsthp = 0
       else:
         print(firstmob, "walks around")
+    case "redstone monstrosity":
+      if firstattack == 0 or firstattack == 1:
+        print("redstone monstrosity sends shockwave at", secondmob)
+        secondhp = secondhp - 250
+        firsthp = firsthp + 5
+      elif firstattack == 2:
+        print("redstone monstrosity shoots fireballs at", secondmob)
+        secondhp = secondhp - 350
+      else:
+        if firsthp < 1000:
+          if firstattack == 3:
+            print("redstone monstrosity pushes", secondmob, "back")
+            firsthp = firsthp + 50
+          else:
+            print("summoned redstone cube crashes into", secondmob)
+            secondhp = secondhp - 50
+        else:
+          print("redstone monstrosity summons redstone cubes")
+          if fightmode == 1:
+            time.sleep(1)
+          print("summoned redstone cube crashes into", secondmob)
+          secondhp = secondhp - 50
     case firstpick:
       if firstmobspecialattackone == "poison" or firstmobspecialattacktwo == "poison":
         if firstattacktimes == 0:
@@ -1238,6 +1278,28 @@ while True:
         secondhp = 0
       else:
         print(secondmob, "walks around")
+    case "redstone monstrosity":
+      if secondattack == 0 or secondattack == 1:
+        print("redstone monstrosity sends shockwave at", firstmob)
+        firsthp = firsthp - 250
+        secondhp = secondhp + 5
+      elif secondattack == 2:
+        print("redstone monstrosity shoots fireballs at", firstmob)
+        firsthp = firsthp - 350
+      else:
+        if secondhp < 1000:
+          if secondattack == 3:
+            print("redstone monstrosity pushes", firstmob, "back")
+            secondhp = secondhp + 50
+          else:
+            print("summoned redstone cube crashes into", firstmob)
+            firsthp = firsthp - 50
+        else:
+          print("redstone monstrosity summons redstone cubes")
+          if fightmode == 1:
+            time.sleep(1)
+          print("summoned redstone cube crashes into", firstmob)
+          firsthp = firsthp - 50
     case secondpick:
       if secondmobspecialattackone == "poison" or secondmobspecialattacktwo == "poison":
         if secondattacktimes == 0:
@@ -1370,3 +1432,4 @@ while True:
   secondattacktimes = secondattacktimes + 1
   if fightmode == 1:
     time.sleep(1)
+
