@@ -47,4 +47,15 @@ If you get an error message, it is most likely that you entered something wrong,
 
 - Refactoring the code to remove repetitive code and separate mob data from fighting logic.
 
-- Displaying a warning when an unsupported mob is selected.
+
+📝 **Updates And Fixes Log**
+
+8/24/2025
+
+- Secret mobs was added, if you type their names when picking the mob, they will battle.
+
+- Fixed issue where pillager dies immediately in battle.
+
+- new secret mob added, Hint: the new secret mob is a boss in Minecraft Dungeons.
+
+- Added a warning when an unsupported mob is selected.
