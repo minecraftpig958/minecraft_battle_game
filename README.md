@@ -31,7 +31,7 @@ python3 main.py
 
 If one of the two mobs die as soon as the battle starts, it might be that 
 
-- you chose to select your own mob, and entered one that is not in the game code
+- you chose to select your own mob, and entered one that is not in the game code(Game should now give warning for this.)
 
 - you created a mob and set the health to 0, meaning it dies immediately
 
