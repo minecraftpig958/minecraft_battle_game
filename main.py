@@ -29,7 +29,7 @@ firstsmart = "N"
 secondsmart = "N"
 firstphase = 0
 secondphase = 0
-fightmode = 0
+fightmode = 1
 firstverify = True
 secondverify = True
 
